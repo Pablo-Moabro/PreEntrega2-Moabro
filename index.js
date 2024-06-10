@@ -1,3 +1,4 @@
+
 class Cervezas{
     constructor(nombre, estilo, peso, medida, precio){
         this.nombre = nombre,
@@ -28,16 +29,24 @@ while(compra != 0){
     }else if (compra == 4){
         compraUsuario.push(cerveza4);
     } else if (compra == 0){
-        alert("gracias por su compra");
+        alert("Gracias por su compra, a continuacion verá un detalle de la compra realizada.");
     } else{
         alert("Opción inválida");
     }
+    
 };
 
 
 
-
+let compraTotal = compraUsuario.map(valor => {return `${valor.nombre} ${valor.estilo}, ${valor.peso}${valor.medida} Precio: $${valor.precio}`});
 console.log(compraUsuario);
+console.log(compraTotal.join("\n"));
+
+let precioTotal = compraUsuario.reduce((total, cerveza) => total += cerveza.precio, 0)
+console.log("Total a pagar $: ",precioTotal);
+
+
+
 
 
 
